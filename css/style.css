@@ -28,7 +28,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 62px;
    
 }
 
@@ -399,111 +398,6 @@ footer {
     .hero h1 { font-size: 28px; }
 }
 
-/* ----------------------------
-   RESPONSIVE HERO (Design page)
------------------------------ */
-@media (max-width: 992px) {
-    .design-hero {
-        height: auto;                /* Автоматична височина */
-        min-height: 60vh;            /* Минимална височина */
-        padding: 120px 20px 40px;    /* Отгоре за nav, отдолу за бутон */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .design-hero-content h1 {
-        font-size: 32px;
-        margin-bottom: 15px;
-    }
-
-    .design-hero-content p {
-        font-size: 16px;
-        line-height: 1.5;
-        margin-bottom: 25px;
-    }
-
-    .design-hero-content .btn {
-        font-size: 16px;
-        padding: 12px 28px;
-    }
-}
-
-@media (max-width: 500px) {
-    .design-hero {
-        min-height: 50vh;
-        padding: 100px 15px 30px;
-    }
-
-    .design-hero-content h1 {
-        font-size: 28px;
-    }
-
-    .design-hero-content p {
-        font-size: 14px;
-    }
-
-    .design-hero-content .btn {
-        font-size: 14px;
-        padding: 10px 24px;
-    }
-}
-
-/* ----------------------------
-   RESPONSIVE HERO (Home page)
------------------------------ */
-@media (max-width: 992px) {
-    .hero {
-        height: auto;                /* Автоматична височина */
-        min-height: 60vh;            /* Минимална височина */
-        padding: 120px 20px 40px;    /* Отгоре за nav, отдолу за бутон */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .hero h1, .hero h2 {
-        font-size: 32px;
-        margin-bottom: 15px;
-    }
-
-    .hero p {
-        font-size: 16px;
-        line-height: 1.5;
-        margin-bottom: 25px;
-    }
-
-    .hero .btn {
-        font-size: 16px;
-        padding: 12px 28px;
-    }
-}
-
-@media (max-width: 500px) {
-    .hero {
-        min-height: 50vh;
-        padding: 100px 15px 30px;
-    }
-
-    .hero h1, .hero h2 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    .hero .btn {
-        font-size: 14px;
-        padding: 10px 24px;
-    }
-}
-
-
 /* ============================
       DESIGN PAGE – VARIANT B
 ============================= */
@@ -695,3 +589,49 @@ footer {
     .design-hero { height: 60vh; }
 }
 
+/* --- Hero секция --- */
+@media (max-width: 1200px) {
+  .design-hero {
+    height: auto;
+    padding: 120px 20px 40px 20px;
+  }
+  .ddesign-hero h1 {
+    font-size: 2.2rem;
+  }
+  .design-hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .design-hero {
+    padding: 120px 15px 40px 15px;
+  }
+  .design-hero h1 {
+    font-size: 2rem;
+  }
+  .design-hero p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .design-hero {
+    padding: 110px 15px 30px 15px;
+  }
+  .design-hero h1 {
+    font-size: 1.8rem;
+  }
+  .design-hero p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .design-hero h1 {
+    font-size: 1.5rem;
+  }
+  .design-hero p {
+    font-size: 0.85rem;
+  }
+}
