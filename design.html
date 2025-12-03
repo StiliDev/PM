@@ -61,8 +61,8 @@
 <!-- ============================
         HERO SECTION
 ============================= -->
-<section class="design-hero">
-    <div class="design-hero-content">
+<section class="design-hero ">
+    <div class="design-hero-content fade-in">
         <h1>ВиК проектиране и изпълнение</h1>
         <p>
             Професионални инженерни решения – от първоначален оглед до завършена инсталация.
@@ -193,6 +193,23 @@ closeBtn.onclick = () => { sideMenu.classList.remove("open"); overlay.classList.
 overlay.onclick = () => { sideMenu.classList.remove("open"); overlay.classList.remove("show"); };
 mobileServices.onclick = (e) => { e.preventDefault(); subMenu.classList.toggle("open"); };
 
+</script>
+
+  <script>
+  // --- Scroll Fade-in ефект ---
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  function handleScroll() {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // За да се активира и при зареждане
 </script>
 
 </body>

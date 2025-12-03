@@ -450,10 +450,10 @@ footer {
         HERO
 ----------------------------- */
 .design-hero {
-    height: 75vh;
+    height: 80vh;
     background:
         linear-gradient(rgba(10, 25, 48, 0.65), rgba(10, 25, 48, 0.6)),
-        url("https://images.unsplash.com/photo-1581091870686-3ed4981b2c52?q=80&w=2070&auto=format&fit=crop")
+        url("14.jpg")
         center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -750,3 +750,390 @@ footer {
     font-size: 0.85rem;
   }
 }
+
+/* =========================================
+   GALLERY SECTIONS (Design + Video)
+========================================= */
+
+.section,
+.gallery-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section h2,
+.gallery-section h2 {
+    text-align: center;
+    font-size: 36px;
+    color: var(--blue-dark);
+    margin-bottom: 40px;
+}
+
+/* Gallery Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+/* Images */
+.gallery img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.04);
+    box-shadow: var(--shadow-hover);
+}
+
+/* =========================================
+   RESPONSIVE GALLERY
+========================================= */
+
+/* Large Tablets */
+@media (max-width: 992px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Small Tablets */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery img {
+        height: 220px;
+    }
+}
+
+/* Phones */
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: 220px;
+    }
+
+    .section h2,
+    .gallery-section h2 {
+        font-size: 30px;
+    }
+}
+/* =========================================
+   VIDEO PAGE DESIGN
+========================================= */
+
+/* ------------------------------
+      HERO VIDEO SECTION
+------------------------------ */
+.video-hero {
+      height: 80vh;
+    background:
+        linear-gradient(rgba(10, 25, 48, 0.65), rgba(10, 25, 48, 0.6)),
+        url("15.jpg")
+        center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.video-section-content {
+    max-width: 800px;
+    color: white;
+    animation: fadeUp 0.9s ease forwards;
+    opacity: 0;
+}
+
+.video-section-content h2 {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.video-section-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* ------------------------------
+      VIDEO CONTENT SECTION
+------------------------------ */
+.video-content {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+.video-content h2 {
+    font-size: 36px;
+    color: var(--blue-dark);
+    margin-bottom: 20px;
+}
+
+.video-content p {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.65;
+    margin-bottom: 25px;
+}
+
+.video-content h3 {
+    font-size: 24px;
+    color: var(--blue);
+    margin: 35px 0 15px;
+}
+
+/* LISTS */
+.video-content ul,
+.video-content ol {
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+.video-content ul li,
+.video-content ol li {
+    font-size: 17px;
+    line-height: 1.6;
+    padding: 6px 0;
+    color: #333;
+}
+
+/* NICE STYLE: bullet decor */
+.video-content ul li::marker {
+    color: var(--blue);
+    font-size: 18px;
+}
+
+.video-content ol li::marker {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+/* =========================================
+     RESPONSIVE VIDEO PAGE
+========================================= */
+
+/* === HERO === */
+@media (max-width: 992px) {
+    .video-hero { height: auto; padding: 120px 20px 60px; }
+    .video-section-content h2 { font-size: 38px; }
+    .video-section-content p { font-size: 17px; }
+}
+
+@media (max-width: 768px) {
+    .video-section-content h2 { font-size: 32px; }
+    .video-section-content p { font-size: 16px; }
+}
+
+@media (max-width: 500px) {
+    .video-section-content h2 { font-size: 28px; }
+    .video-section-content p { font-size: 15px; }
+}
+
+/* === TEXT SECTION === */
+@media (max-width: 768px) {
+    .video-content { margin: 50px auto; }
+    .video-content h2 { font-size: 30px; }
+    .video-content h3 { font-size: 22px; }
+    .video-content p,
+    .video-content li { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+    .video-content h2 { font-size: 28px; }
+    .video-content h3 { font-size: 20px; }
+}
+
+/* --------------------------
+   HERO SECTION — PREMIUM
+--------------------------- */
+
+.em-hero {
+    height: 80vh;
+    background:
+        linear-gradient(rgba(10, 25, 48, 0.65), rgba(10, 25, 48, 0.6)),
+        url("13.jpg")
+        center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+
+
+.em-hero-content {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    max-width: 700px;
+}
+
+.em-hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.em-hero-content p {
+    font-size: 20px;
+    opacity: 0.95;
+    margin-bottom: 25px;
+}
+
+/* --------------------------
+   CONTENT SECTION
+--------------------------- */
+
+.em-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.em-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #0d2d4d;
+}
+
+.em-section h3 {
+    font-size: 26px;
+    margin-top: 25px;
+    color: #0e67b5;
+}
+
+.em-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.em-list {
+    margin-top: 20px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.em-list li {
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.em-list li::before {
+    content: "✔";
+    margin-right: 10px;
+    color: #0e67b5;
+    font-weight: bold;
+}
+
+/* --------------------------
+   PROCESS SECTION — PREMIUM
+--------------------------- */
+
+.em-process {
+    padding: 80px 20px;
+    background: #f5f8fb;
+}
+
+.em-process h2 {
+    text-align: center;
+    font-size: 34px;
+    color: #0d2d4d;
+    margin-bottom: 40px;
+}
+
+.em-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.em-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.em-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+.dot {
+    width: 18px;
+    height: 18px;
+    background: #0e67b5;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+/* --------------------------
+   CTA SECTION
+--------------------------- */
+
+.em-cta {
+    background:#fff;
+    color: black;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.em-cta h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+
+
+.em-cta .btn {
+    display: inline-block;
+    padding: 13px 32px;
+    background: var(--blue);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+.em-cta .btn:hover {
+    background: #0f5dc3;
+    transform: translateY(-3px);
+}
+
+/* --------------------------
+   RESPONSIVE
+--------------------------- */
+
+@media (max-width: 768px) {
+    .em-hero-content h1 {
+        font-size: 34px;
+    }
+
+    .em-hero {
+        height: 300px;
+    }
+}
+
