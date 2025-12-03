@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проектиране – Прототип Монтаж ЕООД</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body class="design-page">
+
+<header>
+    <nav>
+        <a class="logo" href="index.html">ПРОТОТИП МОНТАЖ ЕООД</a>
+
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Начало</a></li>
+
+            <li class="dropdown">
+                <a href="#">Услуги</a>
+                <ul class="dropdown-menu">
+                    <li><a href="design.html">Проектиране</a></li>
+                    <li><a href="video.html">Видеозаснемане на канали</a></li>
+                    <li><a href="emergency.html">Аварийни дейности</a></li>
+                </ul>
+            </li>
+
+            <li><a href="contact.html">Контакти</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="side-menu" id="sideMenu">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <ul>
+        <li><a href="index.html">Начало</a></li>
+        <li class="has-submenu">
+            <a href="#" id="mobileServices">Услуги</a>
+            <ul class="subMenu">
+                <li><a href="design.html">Проектиране</a></li>
+                <li><a href="video.html">Видеозаснемане</a></li>
+                <li><a href="emergency.html">Аварийни дейности</a></li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Контакти</a></li>
+    </ul>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<main class="design-main">
+
+<!-- ============================
+        HERO SECTION
+============================= -->
+<section class="design-hero">
+    <div class="design-hero-content">
+        <h1>ВиК проектиране и изпълнение</h1>
+        <p>
+            Професионални инженерни решения – от първоначален оглед до завършена инсталация.
+            Проектиране, хидравлични изчисления, избор на материали и пълно изграждане.
+        </p>
+        <a href="contact.html" class="btn">Свържете се с нас</a>
+    </div>
+</section>
+
+<!-- ============================
+        ABOUT SECTION
+============================= -->
+<section class="design-about">
+    <div class="about-text">
+        <h2>Пълно покритие на целия процес</h2>
+        <p>
+            Извършваме цялостно проектиране и изграждане на ВиК инсталации за жилищни,
+            търговски и индустриални обекти. Следваме строги инженерни методики и
+            гарантираме дълъг експлоатационен живот.
+        </p>
+    </div>
+
+    <div class="about-cards">
+        <div class="about-card">
+            <i class="fa-solid fa-drafting-compass"></i>
+            <h3>Инженерен анализ</h3>
+            <p>Прецизно заснемане на обекта и първоначално обследване.</p>
+        </div>
+
+        <div class="about-card">
+            <i class="fa-solid fa-diagram-project"></i>
+            <h3>Проект & чертежи</h3>
+            <p>Пълни технически проекти, схеми и блок-схеми.</p>
+        </div>
+
+        <div class="about-card">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <h3>Монтаж & материали</h3>
+            <p>Контрол на материали, монтаж по график и завършване.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================
+       TIMELINE / ЕТАПИ
+============================= -->
+<section class="design-timeline">
+    <h2>Етапи на изпълнение</h2>
+
+    <div class="timeline">
+        <div class="step">
+            <span class="dot"></span>
+            <h3>Оглед и заснемане</h3>
+            <p>Полеви измервания, анализ и заснемане на съществуващите връзки.</p>
+        </div>
+
+        <div class="step">
+            <span class="dot"></span>
+            <h3>Проекти и чертежи</h3>
+            <p>Стандартизирани чертежи, схеми и документация за одобрение.</p>
+        </div>
+
+        <div class="step">
+            <span class="dot"></span>
+            <h3>Доставка и монтаж</h3>
+            <p>Избор на сертифицирани материали и монтаж по график.</p>
+        </div>
+
+        <div class="step">
+            <span class="dot"></span>
+            <h3>Тестове и протоколи</h3>
+            <p>Хидравлични изпитвания, протоколи и предаване на готовия обект.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================
+       CTA SECTION
+============================= -->
+<section class="design-cta">
+    <h2>Готови сме да започнем Вашия проект</h2>
+    <p>Свържете се с нас за оглед и конкретна оферта.</p>
+    <a href="contact.html" class="btn">Свържете се</a>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; Прототип Монтаж ЕООД</p>
+</footer>
+
+<script>
+// Dropdown
+document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.querySelector(".dropdown");
+    const menu = document.querySelector(".dropdown-menu");
+
+    dropdown.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("show");
+    });
+
+    document.addEventListener("click", () => menu.classList.remove("show"));
+});
+
+// Side menu
+const hamburger = document.getElementById("hamburger");
+const sideMenu = document.getElementById("sideMenu");
+const closeBtn = document.getElementById("closeBtn");
+const overlay = document.getElementById("overlay");
+const mobileServices = document.getElementById("mobileServices");
+const subMenu = document.querySelector(".subMenu");
+
+hamburger.onclick = () => { sideMenu.classList.add("open"); overlay.classList.add("show"); };
+closeBtn.onclick = () => { sideMenu.classList.remove("open"); overlay.classList.remove("show"); };
+overlay.onclick = () => { sideMenu.classList.remove("open"); overlay.classList.remove("show"); };
+mobileServices.onclick = (e) => { e.preventDefault(); subMenu.classList.toggle("open"); };
+
+</script>
+
+</body>
+</html>

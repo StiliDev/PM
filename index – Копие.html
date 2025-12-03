@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>ПРОТОТИП МОНТАЖ ЕООД</title>
+</head>
+<body class="home-page">
+    <header>
+        <nav>
+            <a class="logo" href="index.html">ПРОТОТИП МОНТАЖ ЕООД</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Начало</a></li>
+                <li class="dropdown">
+                    <a href="#" id="service-toggle">Услуги</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="design.html"> Проектиране</a></li>
+                         <li><a href="video.html"> Видеозаснемане на канали</a></li>
+                          <li><a href="emergency.html"> Аварийни дейности</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="side-menu" id="sideMenu">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <ul>
+            <li><a href="index.html">Начало</a></li>
+            <li class="has-submenu">
+                <a href="#" id="mobileServices">Услуги</a>
+                <ul class="subMenu">
+                     <li><a href="design.html"> Проектиране</a></li>
+                         <li><a href="video.html"> Видеозаснемане на канали</a></li>
+                          <li><a href="emergency.html"> Аварийни дейности</a></li>
+                </ul>
+            </li>
+             <li><a href="contact.html">Контакти</a></li>
+        </ul>
+    </div>
+<div class="overlay" id="overlay"></div>
+<section class="hero">
+    <div class="hero-content fade-in">
+        <h1>Професионално проектиране и изграждане на ВиК системи</h1>
+        <p>Прототип Монтаж ЕООД е специализирана фирма в областта на водоснабдителните и канализационни
+            инсталации. Основана през 2017г., компанията се развива като надежден партньор за частни и корпоративни клиенти.
+            Работим прецизно, безопасно и в срок- независимо дали става дума за ново строителство, реконструкция или спешна аварийна ситуация.
+            Нашият екип комбинира дългодишен опит, професионална техника и пркатично мислене, за да осигури решения, които работят безотказно в дългосрочен план.
+        </p>
+        <a href="#services" class="btn">Нашите услуги</a>
+    </div>
+
+</section>
+<section class="services fade-in" id="services">
+    <h2>Нашите услуги</h2>
+    <div class="service-cards">
+        <div class="card">
+            <h3>ВиК проектиране и изграждане</h3>
+            <p>Цялостни решения за водопроводни и канализационни инсталации- от проекта до завършената система. 
+                Подход, съобразен с обекта, нормативите и дългосрочната надеждност.
+            </p>
+            <a href="design.html" class="btn">Научи повече</a>
+
+        </div>
+
+        <div class="card">
+            <h3>Видео диагностика и противопожарни инсталации</h3>
+            <p>Съвременна видео инспекция за точна локализация на проблеми в каналите. 
+                проектиране и изграждане на противопижарни инсталации за жилищни, търговски и индустриални обекти. 
+            </p>
+            <a href="video.html" class="btn">Научи повече</a>
+
+        </div>
+
+        <div class="card">
+            <h3>Аварийни ремонти и изкопни дейности</h3>
+            <p>Бърза намеса при аварии, течове и запушвания. Извършваме ръчни изкопи на места, недостъпни за техника, 
+                с минимални щети и прецизно възстановяване.
+            </p>
+            <a href="emergency.html" class="btn">Научи повече</a>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; Прототип Монтаж ЕООД</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.querySelector(".dropdown");
+    const menu = dropdown.querySelector(".dropdown-menu");
+
+    dropdown.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("show");
+    });
+
+    // Затваряне, ако кликнеш някъде навън
+    document.addEventListener("click", () => {
+        menu.classList.remove("show");
+    });
+});
+</script>
+
+    <script>
+        // Хамбургер менюто
+const hamburger = document.getElementById("hamburger");
+const sideMenu = document.getElementById("sideMenu");
+const closeBtn = document.getElementById("closeBtn");
+const overlay = document.getElementById("overlay");
+
+// Подменю в мобилната навигация
+const mobileServices = document.getElementById("mobileServices");
+const subMenu = document.querySelector(".subMenu");
+
+// Отваряне на страничното меню
+hamburger.addEventListener("click", () => {
+    sideMenu.classList.add("open");
+    overlay.classList.add("show");
+});
+
+// Затваряне с Х бутона
+closeBtn.addEventListener("click", () => {
+    sideMenu.classList.remove("open");
+    overlay.classList.remove("show");
+});
+
+// Затваряне при натискане извън менюто
+overlay.addEventListener("click", () => {
+    sideMenu.classList.remove("open");
+    overlay.classList.remove("show");
+});
+
+// Отваряне/затваряне на подменюто "Услуги"
+mobileServices.addEventListener("click", (e) => {
+    e.preventDefault();
+    subMenu.classList.toggle("open");
+});
+
+    </script>
+
+    <script>
+  // --- Scroll Fade-in ефект ---
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  function handleScroll() {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // За да се активира и при зареждане
+</script>
+</body>
+</html>
