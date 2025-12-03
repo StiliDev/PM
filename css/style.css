@@ -394,8 +394,55 @@ footer {
 }
 
 @media (max-width: 500px) {
-    .hero { height: 75vh; }
+    .hero { height: 100vh; }
     .hero h1 { font-size: 28px; }
+}
+
+/* --- Hero секция --- */
+@media (max-width: 1200px) {
+  .hero {
+    height: auto;
+    padding: 120px 20px 40px 20px;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding: 120px 15px 40px 15px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 110px 15px 30px 15px;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 0.85rem;
+  }
 }
 
 /* ============================
