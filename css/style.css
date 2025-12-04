@@ -345,11 +345,20 @@ nav {
 }
 
 .map {
-    flex: 1;
-    height: 460px;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-soft);
+  flex: 1 1 500px; /* ← по-широка карта */
+  min-width: 400px;
+  height: 450px; /* малко по-висока */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  border-radius: 10px;
 }
 
 /* =========================================
