@@ -237,9 +237,9 @@ nav {
 .side-menu {
     position: fixed;
     top: 0;
-    left: -270px;
-    width: 270px;
-    height: 100%;
+    right: -260px;
+    width: 260px;
+    height: 100vh;
     background: var(--blue-dark);
     color: #fff;
     padding: 25px;
@@ -247,7 +247,7 @@ nav {
     z-index: 2000;
 }
 .side-menu.open {
-    left: 0;
+    right: 0;
 }
 
 .side-menu ul {
