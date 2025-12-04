@@ -377,7 +377,14 @@ footer {
         align-items: center;
     }
     .contact-card { justify-content: center; }
-    .map iframe { height: 350px; }
+     .contact-details, .map {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .map {
+    height: 350px;
+  }
 }
 
 
