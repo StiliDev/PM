@@ -64,7 +64,7 @@ nav {
 
 .logo {
     color: #fff;
-    font-size: 22px;
+    font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-decoration: none;
@@ -101,6 +101,7 @@ nav {
     border-radius: var(--radius);
     margin-top: 8px;
     box-shadow: var(--shadow-soft);
+    list-style: none;
 }
 .dropdown-menu.show {
     display: block;
@@ -134,7 +135,7 @@ nav {
    HERO SECTION
 ========================================= */
 .hero {
-    height: 100vh;
+    height: 100dvh;
     background:
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.55)),
         url("https://plus.unsplash.com/premium_photo-1664301972519-506636f0245d?q=80&w=2096&auto=format&fit=crop") center/cover no-repeat;
@@ -257,7 +258,7 @@ nav {
     margin: 18px 0;
 }
 .side-menu a {
-    color: #dbe8ff;
+    color: #fff;
     font-size: 18px;
     text-decoration: none;
     transition: var(--transition);
@@ -298,6 +299,18 @@ nav {
     opacity: 1;
     pointer-events: all;
 }
+
+#mobileServices::after{
+    content: "▸";
+    display: inline-block;
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+}
+
+#mobileServices.open::after {
+    transform: rotate(90deg);
+}
+
 
 /* =========================================
    CONTACT PAGE
@@ -366,9 +379,9 @@ nav {
 ========================================= */
 footer {
     background: var(--blue-dark);
-    color: #e6f1ff;
+    color: #fff;
     text-align: center;
-    padding: 25px;
+    padding: 1.5rem;
 }
 
 /* =========================================
@@ -466,7 +479,7 @@ footer {
         HERO
 ----------------------------- */
 .design-hero {
-    height: 80vh;
+    height: 80dvh;
     background:
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.55)),
         url("14.jpg")
@@ -720,53 +733,22 @@ footer {
     .design-hero { height: 60vh; }
 }
 
-/* --- Hero секция --- */
-@media (max-width: 1200px) {
-  .design-hero {
-    height: auto;
-    padding: 120px 20px 40px 20px;
-  }
-  .ddesign-hero h1 {
-    font-size: 2.2rem;
-  }
-  .design-hero p {
-    font-size: 1rem;
-  }
-}
-
+/* === HERO === */
 @media (max-width: 992px) {
-  .design-hero {
-    padding: 120px 15px 40px 15px;
-  }
-  .design-hero h1 {
-    font-size: 2rem;
-  }
-  .design-hero p {
-    font-size: 0.95rem;
-  }
+    .design-hero { height: auto; padding: 120px 20px 60px; }
+    .design-section-content h2 { font-size: 38px; }
+    .design-section-content p { font-size: 17px; }
 }
 
 @media (max-width: 768px) {
-  .design-hero {
-    padding: 110px 15px 30px 15px;
-  }
-  .design-hero h1 {
-    font-size: 1.8rem;
-  }
-  .design-hero p {
-    font-size: 0.9rem;
-  }
+    .design-section-content h2 { font-size: 32px; }
+    .design-section-content p { font-size: 16px; }
 }
 
-@media (max-width: 480px) {
-  .design-hero h1 {
-    font-size: 1.5rem;
-  }
-  .design-hero p {
-    font-size: 0.85rem;
-  }
+@media (max-width: 500px) {
+    .design-section-content h2 { font-size: 28px; }
+    .design-section-content p { font-size: 15px; }
 }
-
 /* =========================================
    GALLERY SECTIONS (Design + Video)
 ========================================= */
@@ -854,7 +836,7 @@ footer {
       HERO VIDEO SECTION
 ------------------------------ */
 .video-hero {
-      height: 80vh;
+      height: 80dvh;
     background:
          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.55)),
         url("15.jpg")
@@ -1140,65 +1122,23 @@ footer {
     transform: translateY(-3px);
 }
 
-/* --------------------------
-   RESPONSIVE
---------------------------- */
 
-@media (max-width: 768px) {
-    .em-hero-content h1 {
-        font-size: 34px;
-    }
 
-    .em-hero {
-        height: 300px;
-    }
-}
-
-/* --- Hero секция --- */
-@media (max-width: 1200px) {
-  .em-hero {
-    height: auto;
-    padding: 140px 20px 40px 20px;
-  }
-  .em-hero h1 {
-    font-size: 2.2rem;
-  }
-  .em-hero p {
-    font-size: 1rem;
-  }
-}
-
+/* === HERO === */
 @media (max-width: 992px) {
-  .em-hero {
-    padding: 140px 15px 40px 15px;
-  }
-  .em-hero h1 {
-    font-size: 2rem;
-  }
-  .em-hero p {
-    font-size: 0.95rem;
-  }
+    .em-hero { height: auto; padding: 120px 20px 60px; }
+    .em-section-content h2 { font-size: 38px; }
+    .em-section-content p { font-size: 17px; }
 }
 
 @media (max-width: 768px) {
-  .em-hero {
-    padding: 130px 15px 30px 15px;
-  }
-  .em-hero h1 {
-    font-size: 1.8rem;
-  }
-  .em-hero p {
-    font-size: 0.9rem;
-  }
+    .em-section-content h2 { font-size: 32px; }
+    .em-section-content p { font-size: 16px; }
 }
 
-@media (max-width: 480px) {
-  .em-hero h1 {
-    font-size: 1.5rem;
-  }
-  .em-hero p {
-    font-size: 0.85rem;
-  }
+@media (max-width: 500px) {
+    .em-section-content h2 { font-size: 28px; }
+    .em-section-content p { font-size: 15px; }
 }
 
 /* ===== FADE IN EFFECT ===== */

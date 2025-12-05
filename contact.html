@@ -107,7 +107,8 @@ const overlay = document.getElementById("overlay");
 
 // Подменю в мобилната навигация
 const mobileServices = document.getElementById("mobileServices");
-const subMenu = document.querySelector(".subMenu");
+const subMenu = mobileServices.parentElement.querySelector(".subMenu");
+
 
 // Отваряне на страничното меню
 hamburger.addEventListener("click", () => {
@@ -130,8 +131,10 @@ overlay.addEventListener("click", () => {
 // Отваряне/затваряне на подменюто "Услуги"
 mobileServices.addEventListener("click", (e) => {
     e.preventDefault();
-    subMenu.classList.toggle("open");
+    subMenu.classList.toggle("open");         // показваме/скриваме сабменюто
+    mobileServices.classList.toggle("open");  // завъртаме стрелката
 });
+
 
     </script>
 

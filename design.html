@@ -193,6 +193,12 @@ closeBtn.onclick = () => { sideMenu.classList.remove("open"); overlay.classList.
 overlay.onclick = () => { sideMenu.classList.remove("open"); overlay.classList.remove("show"); };
 mobileServices.onclick = (e) => { e.preventDefault(); subMenu.classList.toggle("open"); };
 
+mobileServices.onclick = (e) => {
+    e.preventDefault();
+    subMenu.classList.toggle("open");
+    mobileServices.classList.toggle("open"); // <- това управлява стрелката
+};
+
 </script>
 
   <script>
