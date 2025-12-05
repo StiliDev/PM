@@ -31,21 +31,23 @@
         </nav>
     </header>
 
-    <div class="side-menu" id="sideMenu">
-        <button class="close-btn" id="closeBtn">&times;</button>
-        <ul>
-            <li><a href="index.html">Начало</a></li>
-            <li class="has-submenu">
-                <a href="#" id="mobileServices">Услуги</a>
-                <ul class="subMenu">
-                     <li><a href="design.html"> Проектиране</a></li>
-                         <li><a href="video.html"> Видеозаснемане на канали</a></li>
-                          <li><a href="emergency.html"> Аварийни дейности</a></li>
-                </ul>
-            </li>
-             <li><a href="contact.html">Контакти</a></li>
-        </ul>
-    </div>
+<!-- MOBILE MENU -->
+<div class="side-menu" id="sideMenu">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <ul>
+        <li><a href="index.html">Начало</a></li>
+        <li class="has-submenu">
+            <a href="#" id="mobileServices">Услуги</a>
+            <ul class="subMenu">
+                <li><a href="design.html">Проектиране</a></li>
+                <li><a href="video.html">Видеозаснемане</a></li>
+                <li><a href="emergency.html">Аварийни дейности</a></li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Контакти</a></li>
+    </ul>
+</div>
+
 <div class="overlay" id="overlay"></div>
 
 <main>
@@ -130,7 +132,8 @@ const overlay = document.getElementById("overlay");
 
 // Подменю в мобилната навигация
 const mobileServices = document.getElementById("mobileServices");
-const subMenu = document.querySelector(".subMenu");
+const subMenu = mobileServices.parentElement.querySelector(".subMenu");
+
 
 // Отваряне на страничното меню
 hamburger.addEventListener("click", () => {
@@ -153,8 +156,10 @@ overlay.addEventListener("click", () => {
 // Отваряне/затваряне на подменюто "Услуги"
 mobileServices.addEventListener("click", (e) => {
     e.preventDefault();
-    subMenu.classList.toggle("open");
+    subMenu.classList.toggle("open");         // показваме/скриваме сабменюто
+    mobileServices.classList.toggle("open");  // завъртаме стрелката
 });
+
 
     </script>
 
