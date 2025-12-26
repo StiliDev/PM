@@ -110,7 +110,7 @@ nav {
     padding: 8px 22px;
 }
 .dropdown-menu a {
-    color: #dbe8ff;
+    color: #fff;
     transition: var(--transition);
 }
 .dropdown-menu a:hover {
@@ -370,7 +370,7 @@ nav {
   font-size: 2rem;
   color: #0a2a43;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
 }
 
 .faq-intro {
@@ -616,7 +616,7 @@ nav {
 @media (max-width: 1200px) {
   .hero {
     height: auto;
-    padding: 140px 20px 40px 20px;
+     padding: 120px 20px 60px;;
   }
   .hero h1 {
     font-size: 2.2rem;
@@ -628,6 +628,7 @@ nav {
 
 @media (max-width: 992px) {
   .hero {
+    height: auto;
     padding: 140px 15px 40px 15px;
   }
   .hero h1 {
@@ -640,6 +641,7 @@ nav {
 
 @media (max-width: 768px) {
   .hero {
+    height: auto;
     padding: 130px 15px 30px 15px;
   }
   .hero h1 {
