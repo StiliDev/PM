@@ -12,7 +12,7 @@
 
     <meta name="robots" content="index, follow">
 
-    <link rel="canonical" href="https://pm-vikuslugi.com/video.html">
+    <link rel="canonical" href="https://pm-vikuslugi.com/video-diagnostika-kanali.html">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -32,7 +32,7 @@
                     <a href="#" id="service-toggle">Услуги</a>
                     <ul class="dropdown-menu">
                         <li><a href="vik-proektirane.html"> Проектиране</a></li>
-                         <li><a href="video.html"> Видеозаснемане на канали</a></li>
+                         <li><a href="video-diagnostika-kanali.html"> Видеозаснемане на канали</a></li>
                           <li><a href="avarini-vik-uslugi-sofia.html"> Аварийни дейности</a></li>
                     </ul>
                 </li>
@@ -50,7 +50,7 @@
             <a href="#" id="mobileServices">Услуги</a>
             <ul class="subMenu">
                 <li><a href="vik-proektirane.html">Проектиране</a></li>
-                <li><a href="video.html">Видеозаснемане</a></li>
+                <li><a href="video-diagnostika-kanali.html">Видеозаснемане</a></li>
                 <li><a href="avarini-vik-uslugi-sofia.html">Аварийни дейности</a></li>
             </ul>
         </li>
@@ -96,15 +96,30 @@
     </ol>
 </section>
 
-<section class="section">
-   
-    <div class="gallery">
-       <img src="images/5.jpg" alt="Видео диагностика на канал с камера">
-<img src="images/6.jpg" alt="Камерно обследване на канализация">
-<img src="images/7.jpg" alt="Оглед на канализационна тръба">
-<img src="images/8.jpg" alt="Видео инспекция на тръбна мрежа">
+<section class="carousel-section">
+  <div class="carousel-container">
+    <h2>Галерия</h2>
+
+    <button class="carousel-btn prev">&#10094;</button>
+
+    <div class="carousel">
+     
+      <img src="images/6.jpg" class="carousel-image" alt="Канализация">
+      <img src="images/7.jpg" class="carousel-image" alt="Видео диагностика">
+      <img src="images/8.jpg" class="carousel-image" alt="Аварийни ремонти">
+      
     </div>
+
+    <button class="carousel-btn next">&#10095;</button>
+
+  </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightboxImg">
+</div>
 
     <!-- ============================
        CTA SECTION
@@ -261,6 +276,88 @@ mobileServices.addEventListener("click", (e) => {
   window.addEventListener('scroll', handleScroll);
   handleScroll(); // За да се активира и при зареждане
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const carousel = document.querySelector(".carousel");
+  const images = Array.from(document.querySelectorAll(".carousel-image"));
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  const nextBtn = document.querySelector(".carousel-btn.next");
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    images.forEach(img => img.classList.remove("active"));
+    images[index].classList.add("active");
+    currentIndex = index;
+  }
+
+  /* ===============================
+     ARROWS
+  =============================== */
+  prevBtn.addEventListener("click", () => {
+    showImage((currentIndex - 1 + images.length) % images.length);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    showImage((currentIndex + 1) % images.length);
+  });
+
+  /* ===============================
+     KEYBOARD
+  =============================== */
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+  });
+
+  /* ===============================
+     SWIPE (MOBILE)
+  =============================== */
+  let startX = 0;
+
+  carousel.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  carousel.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (diff > 50) nextBtn.click();
+    if (diff < -50) prevBtn.click();
+  });
+
+  /* ===============================
+     LIGHTBOX
+  =============================== */
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const closeBtn = lightbox.querySelector(".close");
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      showImage(index);
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+
+});
+</script>
+
+
     
 </body>
 </html>

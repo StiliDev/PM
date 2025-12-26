@@ -150,15 +150,38 @@
     </div>
 </section>
 
-<section class="section">
-   
-    <div class="gallery">
-        <img src="images/1.jpg" alt="ВиК проектиране на инсталации – чертежи">
-    <img src="images/2.jpg" alt="Изграждане на водопроводна инсталация">
-    <img src="images/3.jpg" alt="Монтаж на канализационни тръби">
-    <img src="images/4.jpg" alt="Завършена ВиК инсталация">
+<section class="carousel-section">
+  <div class="carousel-container">
+    <h2>Галерия</h2>
+
+    <button class="carousel-btn prev">&#10094;</button>
+
+    <div class="carousel">
+      <img src="images/1.jpg" class="carousel-image active" alt="ВиК монтаж">
+      <img src="images/2.jpg" class="carousel-image" alt="Канализация">
+      <img src="images/3.jpg" class="carousel-image" alt="Видео диагностика">
+      <img src="images/4.jpg" class="carousel-image" alt="Аварийни ремонти">
+       <img src="images/13.jpg" class="carousel-image" alt="Слагане на шахта за канализация">
+        <img src="images/14.jpg" class="carousel-image" alt="Полагане на тръби за канализация">
+         <img src="images/15.jpg" class="carousel-image" alt="Слагане на линейни канали">
+          <img src="images/16.jpg" class="carousel-image" alt="Шахта от канализация">
+           <img src="images/17.jpg" class="carousel-image" alt="Свързване на две труби в една шахта">
+            <img src="images/18.jpg" class="carousel-image" alt="Канализационни тръби">
+             <img src="images/19.jpg" class="carousel-image" alt="Подготовка за канализация">
+              <img src="images/20.jpg" class="carousel-image" alt="Готова канализационна шахта">
     </div>
+
+    <button class="carousel-btn next">&#10095;</button>
+
+  </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightboxImg">
+</div>
+
 
 <!-- ============================
        CTA SECTION
@@ -296,6 +319,89 @@ mobileServices.onclick = (e) => {
   window.addEventListener('scroll', handleScroll);
   handleScroll(); // За да се активира и при зареждане
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const carousel = document.querySelector(".carousel");
+  const images = Array.from(document.querySelectorAll(".carousel-image"));
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  const nextBtn = document.querySelector(".carousel-btn.next");
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    images.forEach(img => img.classList.remove("active"));
+    images[index].classList.add("active");
+    currentIndex = index;
+  }
+
+  /* ===============================
+     ARROWS
+  =============================== */
+  prevBtn.addEventListener("click", () => {
+    showImage((currentIndex - 1 + images.length) % images.length);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    showImage((currentIndex + 1) % images.length);
+  });
+
+  /* ===============================
+     KEYBOARD
+  =============================== */
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+  });
+
+  /* ===============================
+     SWIPE (MOBILE)
+  =============================== */
+  let startX = 0;
+
+  carousel.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  carousel.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (diff > 50) nextBtn.click();
+    if (diff < -50) prevBtn.click();
+  });
+
+  /* ===============================
+     LIGHTBOX
+  =============================== */
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const closeBtn = lightbox.querySelector(".close");
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      showImage(index);
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+
+});
+</script>
+
+
+
 
 </body>
 </html>
